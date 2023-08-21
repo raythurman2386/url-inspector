@@ -13,12 +13,12 @@ export default async function handler(
 
       const payload = {
         client: {
-          clientId: 'your-client-id',
+          clientId: 'url-inspector',
           clientVersion: '1.0.0',
         },
         threatInfo: {
           threatTypes: ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE'],
-          platformTypes: ['ANY_PLATFORM'],
+          platformTypes: ['WINDOWS', 'LINUX', 'OSX'],
           threatEntryTypes: ['URL'],
           threatEntries: [{ url: domain }],
         },
