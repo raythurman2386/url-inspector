@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface UrlCheckerProps {}
 
@@ -24,6 +24,15 @@ const UrlChecker: React.FC<UrlCheckerProps> = () => {
       setResult('An error occurred while checking the URL.');
     }
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setResult('')
+    }, 5000)
+  
+    return () => clearTimeout(timeout)
+  }, [result])
+  
 
   return (
 <div className="bg-white p-8 rounded-lg shadow-md w-80 mx-auto mt-16">
